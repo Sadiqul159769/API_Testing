@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "57a2d4e7-b0a2-4dfa-907b-dd4c89fe2788",
+		"name": "Postman_Training_Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21367851"
+	},
+	"item": [
+		{
+			"name": "Teacher Login",
+			"item": [
+				{
+					"name": "Forgot Password Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "school_code",
+									"value": "23520",
+									"type": "text"
+								},
+								{
+									"key": "email_or_username",
+									"value": "testTeacher@mail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}teacher/forget-password-request",
+							"host": [
+								"{{url}}teacher"
+							],
+							"path": [
+								"forget-password-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Teacher Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email_or_username",
+									"value": "kyle@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "school_code",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}teacher-login",
+							"host": [
+								"{{url}}teacher-login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "oauth2",
+				"oauth2": [
+					{
+						"key": "addTokenTo",
+						"value": "header",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Get Website Settings (name,logo etc.)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}get-website-setting",
+					"host": [
+						"{{url}}get-website-setting"
+					]
+				},
+				"description": "**Response**:\n\n``` json\n{\n    \"status\": true,\n    \"message\": \"Website's basic settings attributes and values.\",\n    \"result\": [\n        {\n            \"attribute\": \"name\",\n            \"value\": \"MY LEARNING 101\"\n        },\n        {\n            \"attribute\": \"tagline\",\n            \"value\": \"Best Learning Platform\"\n        },\n        {\n            \"attribute\": \"address\",\n            \"value\": \"Holding: 5, Road 9. Berlin\"\n        },\n        {\n            \"attribute\": \"email\",\n            \"value\": \"example@mail.com\"\n        },\n        {\n            \"attribute\": \"phone\",\n            \"value\": \"33698446661\"\n        },\n        {\n            \"attribute\": \"locale\",\n            \"value\": \"en\"\n        },\n        {\n            \"attribute\": \"timezone\",\n            \"value\": \"UTC\"\n        },\n        {\n            \"attribute\": \"favicon\",\n            \"value\": null\n        },\n        {\n            \"attribute\": \"logo\",\n            \"value\": \"http://127.0.0.1:8000/uploads/website_settings/logo.png\"\n        },\n        {\n            \"attribute\": \"logo_secondary\",\n            \"value\": null\n        }\n    ]\n}\n\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "Banner List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}banner-list",
+					"host": [
+						"{{url}}banner-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Banner videos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}banner-videos",
+					"host": [
+						"{{url}}banner-videos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
